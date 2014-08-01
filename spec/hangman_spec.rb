@@ -29,6 +29,12 @@ describe 'WordBank' do
       expect(test_bank).to be_an_instance_of WordBank
     end
   end
+  describe 'level' do
+    it 'sets the game level and returns a corresponding word' do
+      test_bank = WordBank.new('medium')
+      expect(test_bank.level.length > 0).to eq true
+    end
+  end
   describe 'easy' do
     it 'returns a random word from an array of short words' do
       test_bank = WordBank.new('easy')

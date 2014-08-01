@@ -3,6 +3,16 @@ class WordBank
     @level = level
   end
 
+  def level
+    if @level == "easy"
+      self.easy
+    elsif @level == "medium"
+      self.medium
+    else
+      self.hard
+    end
+  end
+
   def easy
     easy_words = ['cat', 'dog', 'chicken', 'monkey']
     mystery_num = Random.new
