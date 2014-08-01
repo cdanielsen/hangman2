@@ -1,7 +1,6 @@
 require './lib/game'
 require './lib/hangman'
 require './lib/wordbank'
-require 'pry'
 
 @new_game
 @level = ""
@@ -47,6 +46,7 @@ def main_menu
     puts "\n"
     puts "Used letters: " + @bad_letters.join('')
     puts "\n"
+    puts "Number of chances left: #{8 - @bad_guess}"
     puts @hidden_word.join('')
     puts "Guess a letter!"
     guess = gets.chomp
@@ -61,19 +61,20 @@ def main_menu
       @bad_guess += 1
     end
     if @bad_guess == 8
-      puts "You lose!! Type Y to play again or any other key to exit"
+      puts "You lose!! (The word was '#{@selected_word.join('')}')"
+      puts "Type Y to play again or any other key to exit"
       decision = gets.chomp
       if decision == "Y"
-      welcome
+        welcome
       else
-      exit
+        exit
       end
     end
   end
   puts "You win!! Type Y to play again or any other key to exit"
   decision = gets.chomp
   if decision == "Y"
-  welcome
+    welcome
   end
 end
 

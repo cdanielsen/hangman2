@@ -8,7 +8,6 @@ describe 'Game' do
     it 'creates an instance of the Game class' do
       test_game = Game.new('easy')
       expect(test_game).to be_an_instance_of Game
-      expect(test_game.level).to eq 'easy'
     end
   end
 end
@@ -29,10 +28,10 @@ describe 'WordBank' do
       expect(test_bank).to be_an_instance_of WordBank
     end
   end
-  describe 'level' do
+  describe 'word_in_level' do
     it 'sets the game level and returns a corresponding word' do
       test_bank = WordBank.new('medium')
-      expect(test_bank.level.length > 0).to eq true
+      expect(test_bank.word_in_level.length > 0).to eq true
     end
   end
   describe 'easy' do
@@ -51,12 +50,6 @@ describe 'WordBank' do
     it 'returns a random word from an array of short words' do
       test_bank = WordBank.new('hard')
       expect(test_bank.hard.length > 0).to eq true
-    end
-  end
-  describe 'hidden_word' do
-    it 'builds an array of blanks with the same length as the active word' do
-      test_bank = WordBank.new('easy')
-      expect(test_bank.hidden_word.length > 0).to eq true
     end
   end
 end
