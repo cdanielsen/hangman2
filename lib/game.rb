@@ -1,4 +1,9 @@
 class Game
-  def initialize
+  def initialize(level)
+    @level = level
+  end
+
+  def level
+    @level
   end
 end
