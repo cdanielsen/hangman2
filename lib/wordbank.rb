@@ -3,7 +3,7 @@ class WordBank
     @level = level
   end
 
-  def level
+  def word_in_level
     if @level == "easy"
       self.easy
     elsif @level == "medium"

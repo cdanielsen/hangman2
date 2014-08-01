@@ -53,4 +53,20 @@ describe 'WordBank' do
       expect(test_bank.hard.length > 0).to eq true
     end
   end
+  describe 'hidden_word' do
+    it 'builds an array of blanks with the same length as the active word' do
+      test_bank = WordBank.new('easy')
+      expect(test_bank.hidden_word.length > 0).to eq true
+    end
+  end
 end
+
+
+
+
+
+
+
+
+
+

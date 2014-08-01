@@ -2,11 +2,7 @@ class Game
   def initialize(level)
     @level = level
     @new_man = Hangman.new
-    @new_bank = WordBank.new(level)
-  end
-
-  def level
-    @level
+    @new_bank = WordBank.new(@level)
   end
 
   def new_man
